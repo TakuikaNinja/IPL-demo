@@ -211,22 +211,6 @@ CheckIPL:
 		sty CRC32+7
 		rts
 
-ClearRAM:
-		lda #$00										; clear RAM
-		tax
-@clrmem:
-		sta $200,x
-		sta $300,x
-		sta $400,x
-		sta $500,x
-		sta $600,x
-		sta $700,x
-		inx
-		bne @clrmem
-		lda #$fd										; set VRAM buffer size to max value ($0302~$03ff)
-		sta VRAM_BUFFER_SIZE
-		rts
-
 WaitForNMI:
 		inc NMIReady
 :
@@ -244,7 +228,6 @@ ProcessBGMode:
 ; Initialise background to display the program name and FDS BIOS revision
 BGInit:
 		jsr CheckIPL ; IPL occupies $0200~$07ff
-		jsr ClearRAM
 		jsr DisableRendering
 		jsr WaitForNMI
 		jsr VRAMStructWrite
