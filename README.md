@@ -1,10 +1,13 @@
 # IPL demo
 
-This program targets the Namco IPL Interface present in FDS games developed by Namco.
+This program targets an IPL present in FDS games developed by Namco.
+Once loaded, a CRC32 checksum of the $0200~$07FF region occupied by the IPL will be calculated and displayed.
+The checksum for the IPL extracted from Pac-Man (FDS) is `D908C459`.
 
 ## Usage
 
-The hex file must be loaded using the Lua script from [IPL-MAIN](https://github.com/TakuikaNinja/IPL-MAIN).
+On [Mesen2](https://www.mesen.ca/), the compiled `IPL-demo.hex` file must be loaded using the Lua script from [IPL-MAIN](https://github.com/TakuikaNinja/IPL-MAIN).
+Once a replica of the Namco IPL Interface hardware has been made, it should then become possible to load this program on original hardware.
 
 ## Building
 
