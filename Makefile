@@ -13,6 +13,8 @@ $(GAME).hex : $(OBJ_FILES)  $(GAME).cfg
 	bin2hex.py --offset=0x2000 Jroatch-chr-sheet.chr chr.hex
 	hexmerge.py -o $(GAME).hex prg.hex vec.hex chr.hex
 
+.PHONY: clean
+
 clean:
 	rm -f *.o *.bin *.hex *.dbg *.nl *.map.txt *.labels.txt
 
