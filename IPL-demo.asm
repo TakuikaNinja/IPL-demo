@@ -32,8 +32,8 @@ Reset:
 		jsr InitNametables
 
 		lda #%10000000									; enable NMIs & change background pattern map access
-		sta PPU_CTRL
 		sta PPU_CTRL_MIRROR
+		sta PPU_CTRL
 		
 Main:
 		jsr ProcessBGMode
